@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOLITUDE — Fashion Archive</title>
+<meta name="description" content="SOLITUDE — clothes for the beautifully disconnected.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter:wght@300;400;600&family=Oswald:wght@300;400;500&family=Playfair+Display:wght@300;400&display=swap');
+
+:root{--bg:#070707;--fg:#e7e4dd;--muted:#777;--line:#242424;--red:#a31318}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:Inter,sans-serif;font-weight:300;overflow-x:hidden;cursor:crosshair}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:49;background:linear-gradient(rgba(255,255,255,.015) 50%,transparent 50%);background-size:100% 4px;opacity:.12}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;z-index:60;top:0;left:0;width:100%;padding:20px 4vw;display:flex;justify-content:space-between;mix-blend-mode:difference}
+.logo{font:500 18px Oswald,sans-serif;letter-spacing:.25em}.menu{display:flex;gap:25px;font:10px "DM Mono",monospace;letter-spacing:.13em}.menu a{opacity:.65}.menu a:hover{opacity:1;color:#fff}
+.hero{min-height:100vh;display:grid;place-items:center;position:relative;padding:70px 4vw;text-align:center;background:radial-gradient(circle at 50% 48%,#181818 0,#090909 35%,#050505 75%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,rgba(255,255,255,.045) 50%,transparent 50.2%);pointer-events:none}
+h1{font:300 clamp(88px,17vw,245px)/.76 Oswald,sans-serif;letter-spacing:-.035em;text-transform:uppercase;position:relative}
+h1:before,h1:after{content:"SOLITUDE";position:absolute;inset:0;pointer-events:none;opacity:.16}
+h1:before{transform:translate(3px,-1px);color:#d10e17;clip-path:inset(0 0 55% 0)}
+h1:after{transform:translate(-3px,1px);color:#4e8cff;clip-path:inset(55% 0 0 0)}
+.hero p{margin-top:34px;color:#aaa;font:9px "DM Mono",monospace;letter-spacing:.24em;text-transform:uppercase}
+.scroll{position:absolute;bottom:25px;left:4vw;color:#555;font:9px "DM Mono",monospace;letter-spacing:.15em}
+.scroll:before{content:"●";color:var(--red);margin-right:8px}
+section{border-top:1px solid var(--line)}
+.archive{padding:6vw 4vw 12vw}
+.label{display:flex;justify-content:space-between;margin-bottom:48px;color:#666;font:9px "DM Mono",monospace;letter-spacing:.16em}
+.label span:first-child{color:#aaa}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;align-items:start}
+.card{overflow:hidden;position:relative;background:#111}
+.card:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+.card img{display:block;width:100%;height:auto;filter:contrast(1.08) saturate(.5) brightness(.82);transition:.45s;transform-origin:center}
+.card:hover img{transform:scale(1.06);filter:contrast(1.2) saturate(.7) brightness(.68)}
+.card:hover:before{content:"SOLITUDE / LIVE";position:absolute;z-index:2;top:12px;left:12px;color:#eee;background:#000;padding:5px 7px;font:8px "DM Mono",monospace;letter-spacing:.12em}
+.a{grid-column:1/7}.b{grid-column:8/13;margin-top:11vw}.c{grid-column:2/6;margin-top:2vw}.d{grid-column:7/13;margin-top:9vw}.e{grid-column:1/5;margin-top:4vw}.f{grid-column:6/10}.g{grid-column:10/13;margin-top:8vw}.h{grid-column:3/9;margin-top:7vw}.i{grid-column:9/13;margin-top:3vw}
+.caption{padding-top:7px;color:#555;font:8px "DM Mono",monospace;letter-spacing:.11em}
+.caption:before{content:"// ";color:var(--red)}
+.collection{padding:9vw 4vw 12vw;background:#090909}
+.intro{max-width:780px;margin-bottom:80px}.intro h2{font:300 clamp(52px,8vw,105px)/.83 Oswald,sans-serif;letter-spacing:-.025em;text-transform:uppercase}.intro p{margin-top:30px;color:#888;max-width:480px;font-size:12px;line-height:1.9}
+.products{border-top:1px solid var(--line)}
+.product{display:grid;grid-template-columns:70px 1fr auto;gap:25px;padding:25px 0;border-bottom:1px solid var(--line);align-items:center;transition:.25s}
+.product:hover{background:#0d0d0d;padding-left:14px}.num,.price{font:9px "DM Mono",monospace;color:#555}.name{font:400 30px Oswald,sans-serif;letter-spacing:.01em}.desc{color:#707070;font-size:10px;margin-top:7px}.price{color:var(--red)}
+.about{min-height:80vh;padding:10vw 4vw;display:grid;grid-template-columns:1fr 1fr;gap:10vw;background:#080808}
+.about h2{font:300 clamp(62px,9vw,125px)/.78 Oswald,sans-serif;text-transform:uppercase}.copy{max-width:430px;align-self:end;color:#888;font-size:12px;line-height:1.95}
+.contact{padding:8vw 4vw;background:#050505}.contact h2{font:300 clamp(64px,11vw,150px)/.78 Oswald,sans-serif;text-transform:uppercase}.contact p{margin-top:25px;color:#777;font:10px "DM Mono",monospace}
+footer{padding:25px 4vw;display:flex;justify-content:space-between;color:#444;font:8px "DM Mono",monospace;border-top:1px solid var(--line)}
+@media(max-width:700px){
+nav{padding:16px 4vw}.logo{font-size:16px}.menu{gap:12px;font-size:7px}.menu a:last-child{display:none}
+.hero h1{font-size:23vw}.hero p{font-size:7px;letter-spacing:.18em}
+.archive,.collection,.about,.contact{padding-left:4vw;padding-right:4vw}
+.grid{grid-template-columns:1fr 1fr;gap:8px}.a,.b,.c,.d,.e,.f,.g,.h,.i{grid-column:auto;margin-top:0}.a{grid-row:span 2}.d,.h{grid-column:1/3}.label{margin-bottom:28px}
+.collection{padding-top:18vw}.intro{margin-bottom:55px}.intro p{font-size:11px}
+.product{grid-template-columns:28px 1fr auto;gap:8px;padding:21px 0}.name{font-size:21px}.desc{font-size:8px}.price{font-size:7px}
+.about{grid-template-columns:1fr;min-height:auto;gap:70px;padding-top:18vw;padding-bottom:18vw}.copy{align-self:auto}
+.contact{padding-top:18vw;padding-bottom:18vw}footer{padding:20px 4vw;font-size:6px}
+}
+.club-strip{display:flex;justify-content:space-between;padding:11px 4vw;background:#0b0b0b;border-top:1px solid #211719;border-bottom:1px solid #211719;color:#5e4b4b;font:8px "DM Mono",monospace;letter-spacing:.12em}.club-strip span:nth-child(2){color:#9b151b}
+.night-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #261719;border-bottom:1px solid #261719;background:#090707}.night-grid span{padding:20px 4vw;border-right:1px solid #211719;color:#523f40;font:8px "DM Mono",monospace;letter-spacing:.1em}.night-grid span:nth-child(2){color:#812025}.night-grid span:last-child{border-right:0}
+.hero{background:radial-gradient(ellipse at 50% 55%,#211113 0,#0a0809 36%,#040404 78%)}.hero:before{content:"";position:absolute;inset:-10%;pointer-events:none;background:radial-gradient(ellipse at 30% 30%,rgba(190,190,190,.06),transparent 32%),radial-gradient(ellipse at 72% 65%,rgba(120,120,120,.045),transparent 28%);filter:blur(24px);animation:smoke 10s ease-in-out infinite alternate}
+@keyframes smoke{from{transform:translate(-2%,1%) scale(1)}to{transform:translate(3%,-2%) scale(1.08)}}
+.hero h1{letter-spacing:-.045em;text-shadow:0 0 28px rgba(130,20,25,.14)}
+.hero p{color:#9a8585}
+.collection:before{content:"";display:block;height:1px;background:linear-gradient(90deg,transparent,#63151a,transparent);margin-bottom:0}
+.card img{filter:contrast(1.12) saturate(.42) brightness(.74)}.card:hover img{filter:contrast(1.25) saturate(.62) brightness(.62)}
+.product:hover{box-shadow:inset 2px 0 #9b151b}
+@media(max-width:700px){.club-strip{overflow:hidden;white-space:nowrap;gap:25px;justify-content:flex-start}.club-strip span{flex:none}.night-grid{grid-template-columns:1fr 1fr}.night-grid span{padding:16px 4vw}.night-grid span:nth-child(2){border-right:0}.night-grid span:nth-child(-n+2){border-bottom:1px solid #211719}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#top">SOLITUDE</a><div class="menu"><a href="#archive">ARCHIVE</a><a href="#collection">COLLECTION</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div></nav>
+<header class="hero" id="top"><div><h1>SOLITUDE</h1><p>clothes for the beautifully disconnected.</p><div style="margin-top:18px;color:#4b4b4b;font:8px DM Mono,monospace;letter-spacing:.18em">SIGNAL LOST / 03:17 / STILL AWAKE</div></div><div class="scroll">● 03:17 AM &nbsp; / &nbsp; SCROLL TO ENTER — 01</div></header>
+
+<div class="club-strip"><span>02:41 — BACK ROOM</span><span>LOW LIGHT / HIGH VOLUME</span><span>NO PHOTOS / NO SLEEP</span></div>
+<section class="archive" id="archive"><div class="label"><span>01 / ARCHIVE</span><span>VISUAL STUDIES</span></div>
+<div class="grid">
+<figure class="card a"><img src="IMG_7273.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 001 — WHITE / STATIC</figcaption></figure>
+<figure class="card b"><img src="IMG_7274.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 002 — PRIVATE ROOM</figcaption></figure>
+<figure class="card c"><img src="IMG_7275.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 003 — AFTER DARK</figcaption></figure>
+<figure class="card d"><img src="IMG_7276.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 004 — NOCTURNE</figcaption></figure>
+<figure class="card e"><img src="IMG_7277.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 005 — WHITE NOISE</figcaption></figure>
+<figure class="card f"><img src="IMG_7278.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 006 — REMAINS</figcaption></figure>
+<figure class="card g"><img src="IMG_7279.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 007 — VOID</figcaption></figure>
+<figure class="card h"><img src="IMG_7282.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 008 — AFTERIMAGE</figcaption></figure>
+<figure class="card i"><img src="IMG_7281.jpeg" alt="Fashion archive"><figcaption class="caption">ARCHIVE 009 — LAST LIGHT</figcaption></figure>
+</div></section>
+
+<div class="club-strip"><span>03:06 — SIDE STREET</span><span>ICE MELTING / SPEAKERS DISTORTING</span><span>LAST TRAIN MISSED</span></div>
+<section class="collection" id="collection"><div class="intro"><h2>Pieces for<br>the in-between.</h2><p>A study in absence, movement and memory. SOLITUDE treats clothing as an atmosphere — silhouettes for nights when you want to disappear without leaving.</p></div>
+<div class="products">
+<article class="product"><span class="num">001</span><div><div class="name">THE EMPTY ROOM</div><div class="desc">A silhouette designed for disappearing.</div></div><span class="price">ARCHIVE</span></article>
+<article class="product"><span class="num">002</span><div><div class="name">NOCTURNE</div><div class="desc">For nights that refuse to end.</div></div><span class="price">ARCHIVE</span></article>
+<article class="product"><span class="num">003</span><div><div class="name">AFTERIMAGE</div><div class="desc">What remains when someone leaves.</div></div><span class="price">ARCHIVE</span></article>
+<article class="product"><span class="num">004</span><div><div class="name">WHITE NOISE</div><div class="desc">Softness with nowhere to belong.</div></div><span class="price">ARCHIVE</span></article>
+<article class="product"><span class="num">005</span><div><div class="name">THE LAST LIGHT</div><div class="desc">A final trace before the city goes dark.</div></div><span class="price">ARCHIVE</span></article>
+</div></section>
+
+<section class="about" id="about"><h2>Nothing<br>stays.</h2><div class="copy"><p>SOLITUDE exists somewhere between fashion and memory. We collect silhouettes that feel familiar but impossible to place — pieces shaped by empty streets, fluorescent rooms, late trains and the quiet after everyone has gone home.</p><br><p>Not a trend. Not a uniform. An archive of things felt, worn, and left behind.</p></div></section>
+<section class="contact" id="contact"><div class="label"><span>04 / CONTACT</span><span>STAY AWHILE</span></div><h2>Disappear<br>with us.</h2><p>contact@solitude.archive</p></section>
+<div class="night-grid"><span>EMPTY CAN / 03:31</span><span>ASH ON THE FLOOR</span><span>RED LIGHT / NO EXIT</span><span>DOOR CLOSES 04:00</span></div>
+<footer><span>SOLITUDE © 2026</span><span>FASHION ARCHIVE / 001</span></footer>
+</body></html>
